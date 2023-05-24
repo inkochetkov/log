@@ -16,8 +16,8 @@ func TestLog(t *testing.T) {
 	prodLog := logger.New(logger.ProdLog, "", "")
 
 	prodLog.Info("Test")
-	prodLog.Warn("Test")
-	prodLog.Error("Test", errors.New("0_o"))
+	prodLog.Warn("Test", 1)
+	prodLog.Error("Test", errors.New("0_o"), true)
 	prodLog.Close()
 
 	file, err := os.ReadFile("info.log")
