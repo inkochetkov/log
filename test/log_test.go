@@ -15,9 +15,9 @@ func TestLog(t *testing.T) {
 
 	prodLog := logger.New(logger.ProdLog, "", "")
 
-	prodLog.Info("Test")
+	prodLog.Info("Test", nil)
 	prodLog.Warn("Test", 1)
-	prodLog.Error("Test", errors.New("0_o"), true)
+	prodLog.Error("Test", errors.New("0_o"))
 	prodLog.Close()
 
 	file, err := os.ReadFile("info.log")
@@ -29,8 +29,8 @@ func TestLog(t *testing.T) {
 
 	devLog := logger.New(logger.DevLog, "", "")
 
-	devLog.Info("Test2")
-	devLog.Warn("Test2")
+	devLog.Info("Test2", nil)
+	devLog.Warn("Test2", nil)
 	devLog.Error("Test2", errors.New("0_o"))
 
 	t.Log("Success test")

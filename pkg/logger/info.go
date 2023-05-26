@@ -1,19 +1,13 @@
 package logger
 
 import (
-	"fmt"
 	"log"
 )
 
 // Info level msg
-func (l *Log) Info(mes string, args ...any) {
-
-	for _, arg := range args {
-		mesArgs = fmt.Sprintf("%s %v", mesArgs, arg)
-	}
-	message = mes + mesArgs
+func (l *Log) Info(mes string, arg any) {
 
 	infoLog := log.New(l.File, "INFO\t", log.Ldate|log.Ltime)
-	infoLog.Print(message)
+	infoLog.Print(mes, arg)
 
 }

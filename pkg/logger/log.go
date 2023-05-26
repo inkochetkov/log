@@ -17,10 +17,10 @@ type Log struct {
 
 // logging levels
 type Logs interface {
-	Info(mes string, args ...any)
-	Warn(mes string, args ...any)
-	Error(mes string, args ...any)
-	Fatal(mes string, args ...any)
+	Info(mes string, args any)
+	Warn(mes string, args any)
+	Error(mes string, args any)
+	Fatal(mes string, args any)
 }
 
 var (
