@@ -1,13 +1,13 @@
-package logger
+package log
 
 import (
 	"path"
 
-	"github.com/inkochetkov/exist/pkg/exist"
+	"github.com/inkochetkov/exist"
 )
 
 const (
-	defaultPatch         = "./"
+	defaultPatch         = "./log"
 	defaultPatchFileName = "info.log"
 
 	empty = ""

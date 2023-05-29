@@ -3,7 +3,7 @@ module github.com/inkochetkov/log
 go 1.20
 
 require (
-	github.com/inkochetkov/exist v0.0.2
+	github.com/inkochetkov/exist v0.1.0
 	github.com/stretchr/testify v1.8.2
 )
 

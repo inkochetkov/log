@@ -1,4 +1,4 @@
-package logger
+package log
 
 import (
 	"log"
@@ -22,11 +22,6 @@ type Logs interface {
 	Error(mes string, args any)
 	Fatal(mes string, args any)
 }
-
-var (
-	message string // out mes
-	mesArgs string // argument mes out
-)
 
 // Creating a logger based on type (log to file or output to console), directories and name for file type
 func New(typeLog, patch, pacthFileName string) *Log {
