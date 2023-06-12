@@ -1,13 +1,10 @@
 package log
 
-import (
-	"log"
-)
-
 // Info level msg
-func (l *Log) Info(mes string, arg any) {
+func (l *Log) Info(arg ...any) {
+	l.mu.Lock()
+	defer l.mu.Unlock()
 
-	infoLog := log.New(l.File, "INFO\t", log.Ldate|log.Ltime)
-	infoLog.Print(mes, arg)
+	l.Write(infoLevel, arg...)
 
 }

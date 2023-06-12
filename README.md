@@ -4,7 +4,7 @@ logger
 
 # git
 
-go get https://github.com/inkochetkov/log/pkg/logger
+go get https://github.com/inkochetkov/log
 
 # exmple
 

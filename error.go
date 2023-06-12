@@ -1,13 +1,10 @@
 package log
 
-import (
-	"log"
-)
-
 // Error level msg
-func (l *Log) Error(mes string, arg any) {
+func (l *Log) Error(arg ...any) {
+	l.mu.Lock()
+	defer l.mu.Unlock()
 
-	infoLog := log.New(l.File, "ERROR\t", log.Ldate|log.Ltime)
-	infoLog.Print(mes, arg)
+	l.Write(errorLevel, arg...)
 
 }

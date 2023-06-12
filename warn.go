@@ -1,13 +1,11 @@
 package log
 
-import (
-	"log"
-)
-
 // Warn level msg
-func (l *Log) Warn(mes string, arg any) {
+func (l *Log) Warn(arg ...any) {
 
-	infoLog := log.New(l.File, "WARN\t", log.Ldate|log.Ltime)
-	infoLog.Print(mes, arg)
+	l.mu.Lock()
+	defer l.mu.Unlock()
+
+	l.Write(warnLevel, arg...)
 
 }
